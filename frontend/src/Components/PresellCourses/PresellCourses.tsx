@@ -8,6 +8,7 @@ import "./PresellCourses.css";
 import useFetch from "../../hooks/useFetch";
 import { lastCourseType } from "../types/all.types";
 import CourseBox from "../CourseBox/CourseBox";
+import { Autoplay } from "swiper/modules";
 
 export default function PresellCourses() {
   const [data] = useFetch("courses/presell");
@@ -23,13 +24,17 @@ export default function PresellCourses() {
           <div className="container">
             <div className="row">
               <Swiper
-                spaceBetween={50}
+                modules={[Autoplay]}
+                spaceBetween={30}
                 slidesPerView={3}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
+                loop={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
               >
                 {presellCourses?.map((course) => (
-                  <SwiperSlide>
+                  <SwiperSlide key={course._id}>
                     <CourseBox {...course} isSlider={true} />
                   </SwiperSlide>
                 ))}
