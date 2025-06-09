@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 
 import "./Topbar.css";
 import useFetch from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 import { topbarLinksType } from "../types/all.types";
 
-export default function Topbar() {
-  const [allTopbarLinks,isLoading,refetch]=useFetch("/menus/topbar")
-  const getRandomTopbarItems=(arr:topbarLinksType[],randomCount:number)=>{
-    const shuffle=arr.sort(()=>0.5-Math.random())
-    return shuffle.slice(0,randomCount)
-  }
+function Topbar() {
+  const [allTopbarLinks, isLoading, refetch] = useFetch("/menus/topbar");
+  const getRandomTopbarItems = (
+    arr: topbarLinksType[],
+    randomCount: number
+  ) => {
+    const shuffle = arr.sort(() => 0.5 - Math.random());
+    return shuffle.slice(0, randomCount);
+  };
   console.log(allTopbarLinks);
   return (
     <div className="top-bar">
@@ -18,15 +21,14 @@ export default function Topbar() {
         <div className="top-bar__content">
           <div className="top-bar__right">
             <ul className="top-bar__menu">
-              {!isLoading&&getRandomTopbarItems(allTopbarLinks,6).map(item=>(
-                <li key={item?.id} className="top-bar__item">
-                <Link to={item?.href} className="top-bar__link">
-                  {item?.title}
-                </Link>
-              </li>
-              ))}
-              
-
+              {!isLoading &&
+                getRandomTopbarItems(allTopbarLinks, 6).map((item) => (
+                  <li key={item?.id} className="top-bar__item">
+                    <Link to={item?.href} className="top-bar__link">
+                      {item?.title}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
           <div className="top-bar__left">
@@ -48,3 +50,5 @@ export default function Topbar() {
     </div>
   );
 }
+
+export default memo(Topbar);

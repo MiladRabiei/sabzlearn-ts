@@ -24,6 +24,7 @@ export default function CourseBox(props: lastCourseType) {
             className="course-box__img"
             onLoad={onImageLoaded}
             onError={onImageError}
+            loading="lazy"
           />
           {!isImgShow && <CircleSpinner />}
         </Link>

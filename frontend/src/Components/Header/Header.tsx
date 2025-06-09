@@ -7,10 +7,9 @@ import "./Header.css";
 
 export default function Header() {
   return (
-    <header className="header">
-        <Topbar />
-        <Navbar />
-        <Landing />
+    <header className="w-full">
+      {/* <Topbar /> */}
+      <Landing />
     </header>
   );
 }

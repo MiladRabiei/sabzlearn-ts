@@ -23,6 +23,7 @@ export default function Category() {
     "مرتب سازی براساس پیش فرض"
   );
   const [searchValue, setSearchValue] = useState("");
+  const [courseDisplayType, setCourseDisplayType] = useState("row");
   useEffect(() => {
     switch (status) {
       case "free": {
@@ -59,7 +60,7 @@ export default function Category() {
         setOrderedCourses(categories);
       }
     }
-  }, [status]);
+  }, [status, categories]);
 
   const changeTitle = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
     setCategoryTitle(event?.currentTarget.textContent);
@@ -80,10 +81,21 @@ export default function Category() {
         <div className="container">
           <div className="courses-top-bar">
             <div className="courses-top-bar__right">
-              <div className="courses-top-bar__row-btn courses-top-bar__icon--active">
+              <div
+                className={`courses-top-bar__row-btn ${
+                  courseDisplayType === "row" && "courses-top-bar__icon--active"
+                }`}
+                onClick={() => setCourseDisplayType("row")}
+              >
                 <i className="fas fa-border-all courses-top-bar__icon"></i>
               </div>
-              <div className="courses-top-bar__column-btn">
+              <div
+                className={`courses-top-bar__row-btn ${
+                  courseDisplayType === "column" &&
+                  "courses-top-bar__icon--active"
+                }`}
+                onClick={() => setCourseDisplayType("column")}
+              >
                 <i className="fas fa-align-left courses-top-bar__icon"></i>
               </div>
 
@@ -172,8 +184,75 @@ export default function Category() {
                   <div className="alert alert-warning">
                     هنوز هیچ دوره ای برای این کتگوری وجود ندارد
                   </div>
-                ) : (
+                ) : courseDisplayType === "row" ? (
                   shownCourses?.map((category) => <CourseBox {...category} />)
+                ) : (
+                  shownCourses?.map((course) => (
+                    <div className="col-12">
+                      <div className="course-box">
+                        <div className="course__box-header">
+                          <div className="course__box-right">
+                            <a className="course__box-right-link" href="#">
+                              <img
+                                src="/images/courses/fareelancer.png"
+                                className="course__box-right-img"
+                              />
+                            </a>
+                          </div>
+                          <div className="course__box-left">
+                            <div className="course__box-left-top">
+                              <a href="#" className="course__box-left-link">
+                                {course.name}
+                              </a>
+                            </div>
+                            <div className="course__box-left-center">
+                              <div className="course__box-left-teacher">
+                                <i className="course__box-left-icon fa fa-chalkboard-teacher"></i>
+                                <span className="course__box-left-name">
+                                  محمد امین سعیدی راد
+                                </span>
+                              </div>
+                              <div className="course__box-left-stars">
+                                <span className="course__box-left-star">
+                                  <img src="/images/svgs/star_fill.svg" />
+                                </span>
+                                <span className="course__box-left-star">
+                                  <img src="/images/svgs/star_fill.svg" />
+                                </span>
+                                <span className="course__box-left-star">
+                                  <img src="/images/svgs/star_fill.svg" />
+                                </span>
+                                <span className="course__box-left-star">
+                                  <img src="/images/svgs/star_fill.svg" />
+                                </span>
+                                <span className="course__box-left-star">
+                                  <img src="/images/svgs/star_fill.svg" />
+                                </span>
+                              </div>
+                            </div>
+                            <div className="course__box-left-bottom">
+                              <div className="course__box-left-des">
+                                <p>{course.description}</p>
+                              </div>
+                            </div>
+                            <div className="course__box-footer">
+                              <div className="course__box-footer-right">
+                                <i className="course__box-footer-icon fa fa-users"></i>
+                                <span className="course__box-footer-count">
+                                  202
+                                </span>
+                              </div>
+                              <span className="course__box-footer-left">
+                                {course.price === 0
+                                  ? "رایگان"
+                                  : course.price.toLocaleString()}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))
                 )}
               </div>
             </div>
