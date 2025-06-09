@@ -97,12 +97,60 @@ export default function Navbar() {
                   points="816.6519 386.7124 816.6519 527.0091 478.1841 760.5632 302.0575 655.3487 816.6519 386.7124"
                 ></polygon>
               </svg>
-              <ul className="flex items-center gap-x-3 lg:gap-x-8 *:!text-white">
+              <ul className="flex items-center gap-x-3 lg:gap-x-8">
                 <li>
                   <Link to="/">صفحه اصلی</Link>
                 </li>
-                <li>
+                <li className="relative group/menu ">
                   <Link to="/">دوره های آموزشی</Link>
+                  <div
+                    className="invisible opacity-0 
+                  group-hover/menu:visible group-hover/menu:opacity-100 
+                  absolute top-full pt-7 transition-all z-50 "
+                  >
+                    <ul
+                      className=" relative  w-55  rounded-lg hover:rounded-l-none bg-white
+                   dark:bg-slate-950 text-gray-900 dark:text-white  
+                     "
+                    >
+                      {allMenus?.map((menu: topbarLinksType) => {
+                        return (
+                          <li className=" first:hover:rounded-tr-lg  group p-4 hover:bg-sky-100 hover:text-sky-700  border-l-4 border-l-transparent hover:border-l-4 hover:border-l-sky-500">
+                            <div
+                              id={menu.title}
+                              className={`flex justify-between items-center`}
+                            >
+                              <NavLink to={`/category-info/${menu?.href}/1`}>
+                                {menu.title}
+                              </NavLink>
+                              <svg id={menu.href} className={`size-3 `}>
+                                <use href="#chevron-left"></use>
+                              </svg>
+                            </div>
+                            {menu?.submenus?.length !== 0 && (
+                              <div
+                                className="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute bg-white
+                                 dark:bg-slate-950  z-50  right-full top-0 rounded-l-lg overflow-hidden"
+                              >
+                                <ul
+                                  id={menu.title}
+                                  className=" w-55 min-h-[392px]  p-5 space-y-5"
+                                >
+                                  {menu.submenus?.map((item) => (
+                                    <li className="text-gray-900 dark:text-white hover:text-sky-700">
+                                      <Link to={"/course-info/" + item.href}>
+                                        {item.title}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 </li>
                 <li>
                   <Link to="/">مقالات</Link>
@@ -136,7 +184,10 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-x-3 lg:gap-x-5 ">
-              <svg className="size-6" onClick={() => setLight((prev) => !prev)}>
+              <svg
+                className="size-6 cursor-pointer"
+                onClick={() => setLight((prev) => !prev)}
+              >
                 <use href={`#${mode}`}></use>
               </svg>
 
@@ -229,7 +280,7 @@ export default function Navbar() {
       >
         {auth.isLoggedIn ? (
           <div className=" w-full flex items-center justify-center bg-sky-100 dark:bg-slate-900">
-            <button className="text-center text-black dark:text-white py-5">
+            <button className="text-center py-5">
               <span>{auth.userInfos?.name}</span>
               <svg>
                 <use href="#chevron-left"></use>
@@ -248,7 +299,7 @@ export default function Navbar() {
           <h3 className="text-emerald-400 dark:text-emerald-300">
             دسته بندی ها
           </h3>
-          <ul className="py-5 *:py-2 dark:text-white text-black text-sm ">
+          <ul className="py-5 *:py-2 text-sm ">
             {allMenus?.map((menu: topbarLinksType) => {
               const isActive = activeMenu === menu.title;
               return (
@@ -295,7 +346,7 @@ export default function Navbar() {
             </li>
             <li className="my-5 flex items-center gap-x-2 border-t-2 border-t-black/10">
               <svg
-                className="size-6 text-black dark:text-white "
+                className="size-6 "
                 onClick={() => setLight((prev) => !prev)}
               >
                 <use href={`#${mode}`}></use>
