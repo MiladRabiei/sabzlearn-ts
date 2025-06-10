@@ -55,3 +55,24 @@
 @utility container {
     @apply mx-auto px-4 lg:px-2.5
 }
+
+
+.section_title {
+    position: relative;
+    display: inline-block;
+}
+
+.section_title:after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    height: 10px;
+    width: calc(50%);
+    background-color: #1eb35b40;
+    -webkit-clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+    z-index: -1;
+}

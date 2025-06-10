@@ -6,8 +6,8 @@ import LastArticles from "../../Components/LastArticles/LastArticles";
 import LastCourses from "../../Components/LastCourses/LastCourses";
 import PopularCourses from "../../Components/PopularCourses/PopularCourses";
 import PresellCourses from "../../Components/PresellCourses/PresellCourses";
-
-import "./Index.css"
+import HomeDescription from "../../Components/HomeDescription/HomeDescription";
+import "./Index.css";
 
 export default function Index(props) {
   const [show, setModalShow] = useState(true);
@@ -20,6 +20,7 @@ export default function Index(props) {
       <PopularCourses />
       <PresellCourses />
       <LastArticles />
+      <HomeDescription />
       <Footer />
     </>
   );

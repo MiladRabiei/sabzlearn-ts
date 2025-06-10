@@ -15,22 +15,20 @@ export default function LastArticles() {
       <div className="container">
         <SectionHeader
           title="جدیدترین مقاله ها"
-          desc="پیش به سوی ارتقای دانش"
+          desc="مقاله های بروز برنامه نویسی و تکنولوژی"
           btnTitle="تمامی مقاله ها"
           btnHref="articles/1"
         />
 
-        <div className="articles__content">
-          <div className="row">
-            {allArticles?.map((article) => (
-              <ArticleBox
-                title={article.title}
-                cover={article.cover}
-                description={article.description}
-                shortName={article.shortName}
-              />
-            ))}
-          </div>
+        <div className="grid my-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
+          {allArticles?.map((article) => (
+            <ArticleBox
+              title={article.title}
+              cover={article.cover}
+              description={article.description}
+              shortName={article.shortName}
+            />
+          ))}
         </div>
       </div>
     </section>

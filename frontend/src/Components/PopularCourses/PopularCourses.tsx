@@ -19,15 +19,25 @@ export default function PopularCourses() {
       <div className="container">
         <SectionHeader
           title="محبوب ترین دوره ها"
-          desc="دوره های محبوب بر اساس امتیاز دانشجوها"
+          desc="دوره های محبوب و پروژه محور سبزلرن"
         />
-        <div className="courses-content">
+        <div className="">
           <div className="container">
-            <div className="row">
+            <div className="">
               <Swiper
                 modules={[Autoplay]}
-                spaceBetween={20}
-                slidesPerView={3}
+                spaceBetween={10}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                  1280: {
+                    slidesPerView: 4,
+                  },
+                }}
                 loop={true}
                 autoplay={{
                   delay: 3000,

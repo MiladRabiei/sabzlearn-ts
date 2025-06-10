@@ -9,10 +9,10 @@ export default function Landing() {
     <section className="bg-[url('/images/hero-section-mobile.webp')] w-full h-100 sm:h-auto aspect-[2/1] sm:aspect-none md:bg-[url('/images/hero-section.webp')]  text-white bg-center bg-cover ">
       <Navbar />
       <div className="container">
-        <h1 className="md:hidden my-5 text-lg sm:text-xl text-center font-bold">
+        <h1 className="font-MorabbaBold md:hidden my-5 text-lg sm:text-xl text-center font-bold">
           سبزلرن، اولین گام برنامه‌نویس شدن
         </h1>
-        <h1 className="hidden md:block my-5 font-DanaDemiBold text-2xl lg:text-4xl text-center ">
+        <h1 className="hidden md:block my-5 font-MorabbaBold text-2xl lg:text-4xl text-center ">
           <Typewriter
             onInit={(typeWriter) => {
               typeWriter
@@ -29,7 +29,7 @@ export default function Landing() {
             }}
           />
         </h1>
-        <h3 className="text-sm sm:text-lg md:text-xl my-5 md:my-10 text-center tracking-tighter">
+        <h3 className="font-MorabbaLight text-sm sm:text-lg md:text-xl my-5 md:my-10 text-center tracking-tight">
           با آکادمی سبزلرن، برنامه نویسی رو با خیال راحت یاد بگیر و پیشرفت کن.
         </h3>
         <div className="w-[70%] mx-auto my-5 md:my-10  relative">
@@ -47,7 +47,7 @@ export default function Landing() {
             </svg>
           </button>
         </div>
-        <div className="landing-status !py-5">
+        <div className="landing-status !py-5 ">
           <div className="landing-status__item">
             <img
               className="size-10 sm:size-12 md:size-15 lg:size-20"
@@ -55,7 +55,7 @@ export default function Landing() {
               alt=""
             />
             <LandingCounter count={1648} />
-            <span className="text-sm sm:text-xl lg:text-2xl font-bold">
+            <span className="text-sm sm:text-xl lg:text-2xl font-bold font-MorabbaMedium">
               ساعت آموزش
             </span>
           </div>
@@ -67,7 +67,7 @@ export default function Landing() {
               alt=""
             />
             <LandingCounter count={73} />
-            <span className="text-sm sm:text-xl lg:text-2xl font-bold">
+            <span className="text-sm sm:text-xl lg:text-2xl font-bold font-MorabbaMedium">
               دوره آموزشی
             </span>
           </div>
@@ -78,10 +78,10 @@ export default function Landing() {
               src="/images/conversation-min.webp"
               alt=""
             />
-            <span className="py-3 text-sm sm:text-xl lg:text-2xl font-bold">
+            <span className="py-3 text-sm sm:text-xl lg:text-2xl font-bold ">
               {178830}
             </span>
-            <span className="text-sm sm:text-xl lg:text-2xl font-bold">
+            <span className="text-sm sm:text-xl lg:text-2xl font-bold font-MorabbaMedium">
               دانشجو
             </span>
           </div>

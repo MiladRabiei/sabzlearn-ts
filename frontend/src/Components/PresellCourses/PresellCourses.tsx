@@ -16,17 +16,24 @@ export default function PresellCourses() {
   return (
     <div className="popular">
       <div className="container">
-        <SectionHeader
-          title="دوره های در حال پیش فروش"
-          desc="متن تستی برای توضیحات دوره های پیش فروش"
-        />
-        <div className="courses-content">
+        <SectionHeader title="جدیدترین ها" desc="دوره‌های جدید، فرصت‌های نو" />
+        <div className="">
           <div className="container">
-            <div className="row">
+            <div className="">
               <Swiper
                 modules={[Autoplay]}
-                spaceBetween={30}
-                slidesPerView={3}
+                spaceBetween={10}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                  1280: {
+                    slidesPerView: 4,
+                  },
+                }}
                 loop={true}
                 autoplay={{
                   delay: 3000,

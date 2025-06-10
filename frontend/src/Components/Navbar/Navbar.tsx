@@ -299,7 +299,7 @@ export default function Navbar() {
           <h3 className="text-emerald-400 dark:text-emerald-300">
             دسته بندی ها
           </h3>
-          <ul className="py-5 *:py-2 text-sm ">
+          <ul className="py-5 *:py-2 text-sm text-gray-900 dark:text-white ">
             {allMenus?.map((menu: topbarLinksType) => {
               const isActive = activeMenu === menu.title;
               return (
@@ -360,7 +360,7 @@ export default function Navbar() {
       <div
         ref={overlayMenu}
         onClick={(event) => closeMenu(event)}
-        className="overlay hidden md:hidden z-5 bg-black/50 absolute top-0 size-full"
+        className="overlay fixed inset-0 hidden md:hidden z-5 bg-black/50  size-full"
       ></div>
     </>
   );
