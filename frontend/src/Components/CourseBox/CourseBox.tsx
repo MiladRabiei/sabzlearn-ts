@@ -18,7 +18,7 @@ export default function CourseBox(props: lastCourseType) {
       <div className="course-box shadow-xl">
         <Link to={`/course-info/${props.shortName}`}>
           <img
-            src={`http://localhost:4000/courses/covers/${props.cover}`}
+            src={`https://sabzlearn-ts.onrender.com/courses/covers/${props.cover}`}
             // src="https://placeimg.com/295/295/any/tech?t=190129384"
             alt="Course img"
             className="w-full object-cover h-42 rounded-t-2xl"
