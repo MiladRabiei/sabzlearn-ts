@@ -1,7 +1,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 const apiRequests = axios.create({
-  baseURL: "http://localhost:4000/v1",
+  baseURL: "https://sabzlearn-ts.onrender.com/v1",
   headers: {
     "Content-Type": "application/json",
   },

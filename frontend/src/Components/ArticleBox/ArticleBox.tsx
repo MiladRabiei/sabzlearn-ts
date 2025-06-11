@@ -22,7 +22,7 @@ export default function ArticleBox({
           className="article-card__link-img"
         >
           <img
-            src={`http://localhost:4000/courses/covers/${cover}`}
+            src={`https://sabzlearn-ts.onrender.com/courses/covers/${cover}`}
             className="article-card__img h-45 object-cover"
             alt="Article Cover"
           />

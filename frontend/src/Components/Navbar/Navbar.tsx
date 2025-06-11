@@ -115,7 +115,10 @@ export default function Navbar() {
                     >
                       {allMenus?.map((menu: topbarLinksType) => {
                         return (
-                          <li className=" first:hover:rounded-tr-lg  group p-4 hover:bg-sky-100 hover:text-sky-700  border-l-4 border-l-transparent hover:border-l-4 hover:border-l-sky-500">
+                          <li
+                            key={menu._id}
+                            className=" first:hover:rounded-tr-lg  group p-4 hover:bg-sky-100 hover:text-sky-700  border-l-4 border-l-transparent hover:border-l-4 hover:border-l-sky-500"
+                          >
                             <div
                               id={menu.title}
                               className={`flex justify-between items-center`}
@@ -137,7 +140,10 @@ export default function Navbar() {
                                   className=" w-55 min-h-[392px]  p-5 space-y-5"
                                 >
                                   {menu.submenus?.map((item) => (
-                                    <li className="text-gray-900 dark:text-white hover:text-sky-700">
+                                    <li
+                                      key={item._id}
+                                      className="text-gray-900 dark:text-white hover:text-sky-700"
+                                    >
                                       <Link to={"/course-info/" + item.href}>
                                         {item.title}
                                       </Link>
