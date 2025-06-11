@@ -194,7 +194,10 @@ export default function Category() {
                           <div className="course__box-right">
                             <a className="course__box-right-link" href="#">
                               <img
-                                src="/images/courses/fareelancer.png"
+                                src={
+                                  import.meta.env.BASE_URL +
+                                  "/images/courses/fareelancer.png"
+                                }
                                 className="course__box-right-img"
                               />
                             </a>
@@ -214,19 +217,44 @@ export default function Category() {
                               </div>
                               <div className="course__box-left-stars">
                                 <span className="course__box-left-star">
-                                  <img src="/images/svgs/star_fill.svg" />
+                                  <img
+                                    src={
+                                      import.meta.env.BASE_URL +
+                                      "/images/svgs/star_fill.svg"
+                                    }
+                                  />
                                 </span>
                                 <span className="course__box-left-star">
-                                  <img src="/images/svgs/star_fill.svg" />
+                                  <img
+                                    src={
+                                      import.meta.env.BASE_URL +
+                                      "/images/svgs/star_fill.svg"
+                                    }
+                                  />
                                 </span>
                                 <span className="course__box-left-star">
-                                  <img src="/images/svgs/star_fill.svg" />
+                                  <img
+                                    src={
+                                      import.meta.env.BASE_URL +
+                                      "/images/svgs/star_fill.svg"
+                                    }
+                                  />
                                 </span>
                                 <span className="course__box-left-star">
-                                  <img src="/images/svgs/star_fill.svg" />
+                                  <img
+                                    src={
+                                      import.meta.env.BASE_URL +
+                                      "/images/svgs/star_fill.svg"
+                                    }
+                                  />
                                 </span>
                                 <span className="course__box-left-star">
-                                  <img src="/images/svgs/star_fill.svg" />
+                                  <img
+                                    src={
+                                      import.meta.env.BASE_URL +
+                                      "/images/svgs/star_fill.svg"
+                                    }
+                                  />
                                 </span>
                               </div>
                             </div>

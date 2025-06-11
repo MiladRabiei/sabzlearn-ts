@@ -201,7 +201,7 @@ export default function CourseInfo() {
                       آموزش 20 کتابخانه جاوا اسکریپت مخصوص بازار کار
                     </span>
                     <img
-                      src="/images/info/1.gif"
+                      src={import.meta.env.BASE_URL + "/images/info/1.gif"}
                       alt="course info image"
                       className="introduction__img img-fluid"
                     />
@@ -225,7 +225,7 @@ export default function CourseInfo() {
                       درآمد)
                     </span>
                     <img
-                      src="/images/info/2.jpg"
+                      src={import.meta.env.BASE_URL + "/images/info/2.jpg"}
                       alt="course info image"
                       className="introduction__img img-fluid"
                     />
@@ -371,7 +371,9 @@ export default function CourseInfo() {
                   <div className="techer-details__header">
                     <div className="techer-details__header-right">
                       <img
-                        src="/images/info/teacher.jfif"
+                        src={
+                          import.meta.env.BASE_URL + "/images/info/teacher.jfif"
+                        }
                         alt="Teacher Profile"
                         className="techer-details__header-img"
                       />
@@ -477,7 +479,10 @@ export default function CourseInfo() {
                     <li className="course-info__courses-list-item">
                       <a href="#" className="course-info__courses-link">
                         <img
-                          src="/images/courses/js_project.png"
+                          src={
+                            import.meta.env.BASE_URL +
+                            "/images/courses/js_project.png"
+                          }
                           alt="Course Cover"
                           className="course-info__courses-img"
                         />
@@ -489,7 +494,10 @@ export default function CourseInfo() {
                     <li className="course-info__courses-list-item">
                       <a href="#" className="course-info__courses-link">
                         <img
-                          src="/images/courses/fareelancer.png"
+                          src={
+                            import.meta.env.BASE_URL +
+                            "/images/courses/fareelancer.png"
+                          }
                           alt="Course Cover"
                           className="course-info__courses-img"
                         />
@@ -501,7 +509,10 @@ export default function CourseInfo() {
                     <li className="course-info__courses-list-item">
                       <a href="#" className="course-info__courses-link">
                         <img
-                          src="/images/courses/nodejs.png"
+                          src={
+                            import.meta.env.BASE_URL +
+                            "/images/courses/nodejs.png"
+                          }
                           alt="Course Cover"
                           className="course-info__courses-img"
                         />
@@ -513,7 +524,10 @@ export default function CourseInfo() {
                     <li className="course-info__courses-list-item">
                       <a href="#" className="course-info__courses-link">
                         <img
-                          src="/images/courses/jango.png"
+                          src={
+                            import.meta.env.BASE_URL +
+                            "/images/courses/jango.png"
+                          }
                           alt="Course Cover"
                           className="course-info__courses-img"
                         />

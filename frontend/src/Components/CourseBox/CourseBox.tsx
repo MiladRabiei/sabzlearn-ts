@@ -48,27 +48,27 @@ export default function CourseBox(props: lastCourseType) {
             </div>
             <div className="course-box__rating">
               <img
-                src="/images/svgs/star.svg"
+                src={import.meta.env.BASE_URL + "/images/svgs/star.svg"}
                 alt="rating"
                 className="course-box__star"
               />
               <img
-                src="/images/svgs/star_fill.svg"
+                src={import.meta.env.BASE_URL + "/images/svgs/star_fill.svg"}
                 alt="rating"
                 className="course-box__star"
               />
               <img
-                src="/images/svgs/star_fill.svg"
+                src={import.meta.env.BASE_URL + "/images/svgs/star_fill.svg"}
                 alt="rating"
                 className="course-box__star"
               />
               <img
-                src="/images/svgs/star_fill.svg"
+                src={import.meta.env.BASE_URL + "/images/svgs/star_fill.svg"}
                 alt="rating"
                 className="course-box__star"
               />
               <img
-                src="/images/svgs/star_fill.svg"
+                src={import.meta.env.BASE_URL + "/images/svgs/star_fill.svg"}
                 alt="rating"
                 className="course-box__star"
               />

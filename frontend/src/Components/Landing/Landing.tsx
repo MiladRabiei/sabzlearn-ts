@@ -51,7 +51,7 @@ export default function Landing() {
           <div className="landing-status__item">
             <img
               className="size-10 sm:size-12 md:size-15 lg:size-20"
-              src="/images/clock-min.webp"
+              src={import.meta.env.BASE_URL + "/images/clock-min.webp"}
               alt=""
             />
             <LandingCounter count={1648} />
@@ -63,7 +63,7 @@ export default function Landing() {
           <div className="landing-status__item">
             <img
               className="size-10 sm:size-12 md:size-15 lg:size-20"
-              src="/images/book-min.webp"
+              src={import.meta.env.BASE_URL + "/images/book-min.webp"}
               alt=""
             />
             <LandingCounter count={73} />
@@ -75,7 +75,7 @@ export default function Landing() {
           <div className="landing-status__item">
             <img
               className="size-10 sm:size-12 md:size-15 lg:size-20"
-              src="/images/conversation-min.webp"
+              src={import.meta.env.BASE_URL + "/images/conversation-min.webp"}
               alt=""
             />
             <span className="py-3 text-sm sm:text-xl lg:text-2xl font-bold ">
