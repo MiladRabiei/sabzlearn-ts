@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Topbar from "../../Components/Topbar/Topbar";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 
@@ -74,7 +73,6 @@ export default function Category() {
   };
   return (
     <>
-      <Topbar />
       <Navbar />
 
       <section className="courses">

@@ -64,30 +64,38 @@ export default function ArticleInfo() {
                   </div>
                 </div>
                 <img
-                  src="/images/blog/1.jpg"
+                  src={import.meta.env.BASE_URL + "/images/blog/1.jpg"}
                   alt="Article Cover"
                   className="article__banner"
                 />
                 <div className="article__score">
                   <div className="article__score-icons">
                     <img
-                      src="/images/svgs/star_fill.svg"
+                      src={
+                        import.meta.env.BASE_URL + "/images/svgs/star_fill.svg"
+                      }
                       className="article__score-icon"
                     />
                     <img
-                      src="/images/svgs/star_fill.svg"
+                      src={
+                        import.meta.env.BASE_URL + "/images/svgs/star_fill.svg"
+                      }
                       className="article__score-icon"
                     />
                     <img
-                      src="/images/svgs/star_fill.svg"
+                      src={
+                        import.meta.env.BASE_URL + "/images/svgs/star_fill.svg"
+                      }
                       className="article__score-icon"
                     />
                     <img
-                      src="/images/svgs/star_fill.svg"
+                      src={
+                        import.meta.env.BASE_URL + "/images/svgs/star_fill.svg"
+                      }
                       className="article__score-icon"
                     />
                     <img
-                      src="/images/svgs/star.svg"
+                      src={import.meta.env.BASE_URL + "/images/svgs/star.svg"}
                       className="article__score-icon"
                     />
                   </div>
@@ -135,7 +143,7 @@ export default function ArticleInfo() {
                 </div>
 
                 <img
-                  src="/images/blog/2.jpg"
+                  src={import.meta.env.BASE_URL + "/images/blog/2.jpg"}
                   alt="Article Image"
                   className="article__seconadary-banner"
                 />
@@ -155,7 +163,7 @@ export default function ArticleInfo() {
                     و به زبان فارسی این زبان را یاد بگیرید.
                   </p>
                   <img
-                    src="/images/blog/4.png"
+                    src={import.meta.env.BASE_URL + "/images/blog/4.png"}
                     alt="article body img"
                     className="article-section__img"
                   />
@@ -192,7 +200,7 @@ export default function ArticleInfo() {
                     و به زبان فارسی این زبان را یاد بگیرید.
                   </p>
                   <img
-                    src="/images/blog/3.jpg"
+                    src={import.meta.env.BASE_URL + "/images/blog/3.jpg"}
                     alt="article body img"
                     className="article-section__img"
                   />

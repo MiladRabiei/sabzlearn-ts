@@ -10,15 +10,14 @@ import { lastCourseType } from "../../Components/types/all.types";
 import Pagination from "../../Components/Pagination/Pagination";
 
 export default function Courses() {
-  const [data,isLoading,refetch]=useFetch("/courses")
-  const allCourses= data as lastCourseType[]
-  const [shownCourses,setShownCourses]=useState<lastCourseType[]>([])
-  if(isLoading){
-    return
+  const [data, isLoading, refetch] = useFetch("/courses");
+  const allCourses = data as lastCourseType[];
+  const [shownCourses, setShownCourses] = useState<lastCourseType[]>([]);
+  if (isLoading) {
+    return;
   }
   return (
     <>
-      <Topbar />
       <Navbar />
 
       <Breadcrumb
@@ -38,19 +37,18 @@ export default function Courses() {
           <div className="courses-content">
             <div className="container">
               <div className="row">
-                {shownCourses?.map(course=>(
-
-                <CourseBox {...course}/>
+                {shownCourses?.map((course) => (
+                  <CourseBox {...course} />
                 ))}
               </div>
             </div>
           </div>
 
           <Pagination
-          itemsCount={5}
-          items={allCourses}
-          pathName={"/courses"}
-          setShownCourses={setShownCourses}
+            itemsCount={5}
+            items={allCourses}
+            pathName={"/courses"}
+            setShownCourses={setShownCourses}
           />
         </div>
       </section>

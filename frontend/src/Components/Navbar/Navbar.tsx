@@ -203,10 +203,13 @@ export default function Navbar() {
                 </svg>
               </Link>
               {!auth.isLoading && auth.isLoggedIn ? (
-                <Link to="#" className="main-header__profile">
-                  <span className="main-header__profile-text">
+                <Link to="#" className="">
+                  <svg className="size-6">
+                    <use href="#person"></use>
+                  </svg>
+                  {/* <span className="main-header__profile-text">
                     {auth.userInfos?.name}
-                  </span>
+                  </span> */}
                 </Link>
               ) : (
                 <Link
