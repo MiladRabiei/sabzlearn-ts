@@ -33,12 +33,12 @@ export default function Pagination<T>({
 
     for (let i = 1; i <= (pageCount || 1); i++) {
       pages.push(
-        <li className="courses__pagination-item">
+        <li key={i} className="courses__pagination-item mx-2 ">
           <Link
             to={`${pathName}/${i}`}
             onClick={() => setMainPage(i)}
-            className={`courses__pagination-link ${
-              mainPage === i ? "courses__pagination-link--active" : null
+            className={`py-2 px-4 rounded-lg  ${
+              mainPage === i ? "bg-gray-400 dark:bg-gray-700 " : null
             }`}
           >
             {i}
@@ -50,14 +50,7 @@ export default function Pagination<T>({
   };
   return (
     <div className="courses-pagination">
-      <ul className="courses__pagination-list">
-        <li className="courses__pagination-item">
-          <a href="#" className="courses__pagination-link">
-            <i className="fas fa-long-arrow-alt-right courses__pagination-icon"></i>
-          </a>
-        </li>
-        {paginationFunc()}
-      </ul>
+      <ul className="courses__pagination-list">{paginationFunc()}</ul>
     </div>
   );
 }

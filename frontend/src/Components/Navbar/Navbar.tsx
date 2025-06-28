@@ -312,7 +312,7 @@ export default function Navbar() {
             {allMenus?.map((menu: topbarLinksType) => {
               const isActive = activeMenu === menu.title;
               return (
-                <li>
+                <li key={menu._id}>
                   <div
                     id={menu.title}
                     className={`flex justify-between items-center  ${

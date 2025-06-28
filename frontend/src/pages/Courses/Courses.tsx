@@ -36,9 +36,9 @@ export default function Courses() {
         <div className="container">
           <div className="courses-content">
             <div className="container">
-              <div className="row">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-3">
                 {shownCourses?.map((course) => (
-                  <CourseBox {...course} />
+                  <CourseBox {...course} key={course._id} />
                 ))}
               </div>
             </div>
